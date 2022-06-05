@@ -4,7 +4,7 @@
 // 3) Split the app into three widgets: App, TextControl & Text
 import 'package:flutter/material.dart';
 import './text.dart';
-import './textcontrol.dart';
+import './textControl.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,7 @@ void main() {
 
 class MyApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
+  State<MyApp> createState() {
     return _MyAppState();
   }
 }
@@ -37,18 +37,19 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.account_box),
+          leading: Icon(Icons.account_tree_sharp),
           leadingWidth: 100,
           title: Text("Assignment One"),
           centerTitle: true,
           backgroundColor: Colors.blueGrey[700],
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MyText(originalText),
             MyButton(changeText),
             OutlinedButton(
-              child: Text("Restart Text",
+              child: Text("Original Text",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
               onPressed: restartText,
               style: OutlinedButton.styleFrom(
