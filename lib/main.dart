@@ -23,13 +23,13 @@ class _MyAppState extends State<MyApp> {
 
   void changeText() {
     setState(() {
-      originalText = 'Text Changed Successfully';
+      originalText = 'Text Changed Successfully 😀';
     });
   }
 
   void restartText() {
     setState(() {
-      originalText = 'Original Text , For The Assignment One';
+      originalText = 'Original Text , For The First Assignment';
     });
   }
 
