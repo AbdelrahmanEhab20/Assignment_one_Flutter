@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import './text.dart';
 import './textControl.dart';
+import 'orignalText.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,26 +36,23 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           leading: Icon(Icons.account_tree_sharp),
           leadingWidth: 100,
           title: Text("Assignment One"),
           centerTitle: true,
-          backgroundColor: Colors.blueGrey[700],
+          backgroundColor: Colors.teal[700],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MyText(originalText),
-            MyButton(changeText),
-            OutlinedButton(
-              child: Text("Original Text",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
-              onPressed: restartText,
-              style: OutlinedButton.styleFrom(
-                  primary: Colors.green, side: BorderSide(color: Colors.black)),
-            )
+            if (originalText != 'Text Changed Successfully')
+              ChangeButton(changeText),
+            if (originalText == 'Text Changed Successfully')
+              OriginalTextBtn(restartText)
           ],
         ),
       ),

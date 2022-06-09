@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-class ChangeButton extends StatelessWidget {
+class OriginalTextBtn extends StatelessWidget {
   final Function _changeFunction;
 
-  ChangeButton(this._changeFunction);
+  OriginalTextBtn(this._changeFunction);
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20),
       child: OutlinedButton(
-        child: Text("Change Text",
+        child: Text("Original Text",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 152, 25, 114),
+                color: Colors.green,
                 fontSize: 26)),
         onPressed: _changeFunction,
         style: OutlinedButton.styleFrom(
-            primary: Colors.black,
-            side: BorderSide(),
+            primary: Colors.green,
+            side: BorderSide(color: Colors.black),
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20)),
       ),
     );
